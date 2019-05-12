@@ -21,9 +21,9 @@
  * Refer to Section 4.2.3, page 24.
  **/
 
-#include <openssl/err.h>
-#include <openssl/obj_mac.h>
-#include <openssl/opensslv.h>
+//#include <openssl/err.h>
+//#include <openssl/obj_mac.h>
+//#include <openssl/opensslv.h>
 #include "Sha2.h"
 
 #if OPENSSL_VERSION_NUMBER < 0x1010007fL  // only needed before OpenSSL 1.1.0g
@@ -35,6 +35,7 @@
 #include "Schnorr.h"
 //#include "libUtils/Logger.h"
 #include "../libUtils/Logger.h"
+#include "../openssl/include/openssl/obj_mac.h"
 
 using namespace std;
 
