@@ -18,8 +18,8 @@
 #ifndef __SCHNORR_H__
 #define __SCHNORR_H__
 
-#include <openssl/bn.h>
-#include <openssl/ec.h>
+//#include <openssl/bn.h>
+//#include <openssl/ec.h>
 
 #include <array>
 #include <memory>
@@ -27,9 +27,14 @@
 #include <string>
 #include <vector>
 
-#include "common/Constants.h"
-#include "common/Serializable.h"
-#include "libUtils/DataConversion.h"
+//#include "common/Constants.h"
+//#include "common/Serializable.h"
+//#include "libUtils/DataConversion.h"
+#include "../libUtils/DataConversion.h"
+#include "../openssl/include/openssl/ec.h"
+#include "../openssl/include/openssl/ossl_typ.h"
+#include "../depends/common/Common.h"
+#include "../common/Serializable.h"
 
 /// Stores the NID_secp256k1 curve parameters for the elliptic curve scheme used
 /// in Zilliqa.
@@ -52,7 +57,7 @@ struct BIGNUMSerialize {
   static std::mutex m_mutexBIGNUM;
 
   /// Deserializes a BIGNUM from specified byte stream.
-  static std::shared_ptr<BIGNUM> GetNumber(const bytes& src,
+  static std::shared_ptr<BIGNUM> GetNumber(const dev::bytes& src,
                                            unsigned int offset,
                                            unsigned int size);
 
